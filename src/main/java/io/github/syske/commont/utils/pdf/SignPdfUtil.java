@@ -438,47 +438,4 @@ public class SignPdfUtil {
 	public static PageStyle getPageStyle_PORTRAIT() {
 		return PageStyle.PAGE_STYLE_PORTRAIT;
 	}
-
-	public static void main(String[] args) throws Exception {
-		sign("E:\\workSpeace\\pansky\\IReport\\personal-insurance-certificate.pdf",//
-				"D:\\personal-insurance-certificate-signed.pdf",
-				"E:\\workSpeace\\pansky\\other_files\\电子签章\\szywzyz -lite.png",
-				null, null, "盖章", null, PageStyle.PAGE_STYLE_LANDSCAPE, false);
-		// read();
-
-		// test();
-	}
-
-	public static void test() throws Exception {
-		String[] fileName = {"sign_0000_1_yxz.png ", "sign_0001_2_zxr.png ",
-				"sign_0002_3_jc.png  ", "sign_0003_4_xcw.png ",
-				"sign_0004_5_zyb.png ", "sign_0005_6_qys.png ",
-				"sign_0006_7_zt.png  ", "sign_0007_8_yl.png  ",
-				"sign_0008_9_zkx.png ", "sign_0009_10_haj.png",
-				"sign_0010_11_wsx.png", "sign_0011_12_jxp.png",
-				"sign_0012_13_yy.png ", "sign_0013_14_fl.png ",
-				"sign_0014_15_yxb.png", "sign_0015_16_sl.png ",
-				"sign_0016_17_yxy.png", "sign_0017_18_yss.png",
-				"sign_0018_19_qw.png ", "sign_0019_20_lr.png ",
-				"sign_0020_21_yx.png ", "sign_0021_22_wk.png ",
-				"sign_0022_23_fx.png ", "sign_0023_24_wms.png",
-				"sign_0024_25_zzq.png", "sign_0025_26_zr.png ",
-				"sign_0026_27_zl.png ", "sign_0027_28_wsp.png",
-				"sign_0028_29_wx.png ", "sign_0029_30_rml.png",
-				"sign_0030_31_pyh.png", "sign_0031_32_hy.png ",
-				"sign_0032_33_rly.png", "sign_0033_34_lxl.png",
-				"sign_0034_35_wwj.png", "sign_0035_36_zht.png",
-				"sign_0036_37_hgf.png", "sign_0037_38_lh.png ",
-				"sign_0038_39_mq.png ", "sign_0039_40_rxx.png",
-				"sign_0040_41_lsl.png"};
-		for (String string : fileName) {
-			String trim = string.trim();
-			String FileNameString = trim.substring(0, trim.length() - 4);
-			sign("e:\\test2_sgin.pdf",//
-					"d:\\sign" + FileNameString + ".pdf",
-					"E:\\workSpeace\\pansky\\other_files\\电子签章\\png\\" + trim,
-					"负责人", null, PageStyle.PAGE_STYLE_LANDSCAPE, true);
-
-		}
-	}
 }
