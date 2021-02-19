@@ -84,7 +84,8 @@ public class PdfUtil {
                 acroFields.setField(key, parameters.get(key));
             }
 
-            pdfStamper.setFormFlattening(true);//如果为false那么生成的PDF文件还能编辑，一定要设为true
+            //如果为false那么生成的PDF文件还能编辑，一定要设为true
+            pdfStamper.setFormFlattening(true);
             pdfStamper.flush();
             pdfStamper.close();
             //设置纸张，可以在Excel制作是设定好纸张大小

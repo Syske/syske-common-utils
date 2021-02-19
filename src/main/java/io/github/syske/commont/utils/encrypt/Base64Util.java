@@ -17,7 +17,8 @@ import java.util.UUID;
  */
 public class Base64Util {
     private transient static Logger log = LoggerFactory.getLogger(Base64Util.class);
-
+    // 字符编码 UTF-8
+    private static final String CHARSET_NAME = "UTF-8";
     private Base64Util() {}
 
     /**
@@ -28,7 +29,7 @@ public class Base64Util {
     public static String  encryptBase64(String sourcesStr) throws Exception {
         BASE64Encoder encoder = new BASE64Encoder();
         try {
-            return encoder.encode(sourcesStr.getBytes("UTF-8"));
+            return encoder.encode(sourcesStr.getBytes(CHARSET_NAME));
         } catch (UnsupportedEncodingException e) {
             throw new Exception("base64加密失败" ,e);
         }
@@ -44,7 +45,7 @@ public class Base64Util {
     public static String decryptBase64(String sourcesStr) throws Exception {
         BASE64Decoder decoder = new BASE64Decoder();
         try {
-            return new String(decoder.decodeBuffer(sourcesStr), "UTF-8");
+            return new String(decoder.decodeBuffer(sourcesStr), CHARSET_NAME);
         } catch (IOException e) {
             throw new Exception("base64解密失败" ,e);
         }

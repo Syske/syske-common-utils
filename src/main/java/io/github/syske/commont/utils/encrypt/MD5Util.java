@@ -116,8 +116,10 @@ public class MD5Util {
     }
 
     private static void appendHexPair(byte bt, StringBuffer stringbuffer) {
-        char c0 = hexDigits[(bt & 0xf0) >> 4];// 取字节中高 4 位的数字转换, >>> 为逻辑右移，将符号位一起右移,此处未发现两种符号有何不同
-        char c1 = hexDigits[bt & 0xf];// 取字节中低 4 位的数字转换
+        // 取字节中高 4 位的数字转换, >>> 为逻辑右移，将符号位一起右移,此处未发现两种符号有何不同
+        char c0 = hexDigits[(bt & 0xf0) >> 4];
+        // 取字节中低 4 位的数字转换
+        char c1 = hexDigits[bt & 0xf];
         stringbuffer.append(c0);
         stringbuffer.append(c1);
     }
